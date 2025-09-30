@@ -1,1 +1,15 @@
+name: Scheduled Task
 
+on:
+  schedule:
+    # 定时任务的时间表，使用Cron表达式
+    - cron: '*/5 * * * *'  # 每5分钟执行一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo "Hello, world!"
